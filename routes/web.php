@@ -20,15 +20,29 @@ use App\Http\Controllers\Frontend\IndexController;
 |
 */
 
+Route::get('/api/hello',[ IndexController::class, 'api']);
+
 // Route::get('/', [IndexController::class,'home'])->('home');
 
 Route::get('/', [IndexController::class,'home'])->name('welcome');
 Route::get('/products/{slug}', [IndexController::class,'productDetail'])->name('product-detail');
 Route::get('/categories/{slug}', [IndexController::class,'categoryProduct'])->name('category-product');
+Route::get('/user/auth', [IndexController::class,'userAuth'])->name('user.auth');
+Route::post('/user/login', [IndexController::class,'userLogin'])->name('user.login');
+Route::post('/user/register', [IndexController::class,'userRegister'])->name('user.register');
+Route::get('/user/logout', [IndexController::class,'userLogout'])->name('user.logout');
+
+
+Route::prefix('user')->group(function () {
+    Route::get('/dashboard', [IndexController::class,'userDashboard'])->name('user.dashboard');
+    Route::get('/order', [IndexController::class,'userOrder'])->name('user.order');
+    Route::get('/address', [IndexController::class,'userAccount'])->name('user.address');
+    Route::get('/account-detail', [IndexController::class,'userAccount'])->name('user.detail');
+});
 
 
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

@@ -31,7 +31,7 @@ class UserTableSeeder extends Seeder
                 'username' => 'Light',
                 'email' => 'light@gmail.com',
                 'password'=> Hash::make(1111),
-                'role' => 'vendor',
+                'role' => 'seller',
                 'status' => 'active'
             ],
             //customer

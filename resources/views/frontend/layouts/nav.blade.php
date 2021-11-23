@@ -135,13 +135,15 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">{{auth()->check() ? auth()->user()->username : "Account"}}</a>
                         <ul class="dropdown-menu">
-                            <li><a href="cart.html">Cart</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="my-account.html">My Account</a></li>
-                            <li><a href="wishlist.html">Wishlist</a></li>
-                            <li><a href="shop-detail.html">Shop Detail</a></li>
+                            @auth
+
+                                <li><a href="{{route('user.dashboard')}}">Go to account</a></li>
+                                <li><a href="{{route('user.logout')}}">Logout</a></li>
+                            @else
+                                <li><a href="{{route('user.auth')}}">Login or Register</a></li>
+                            @endauth
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="service.html">Our Service</a></li>

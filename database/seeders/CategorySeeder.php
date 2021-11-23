@@ -34,6 +34,22 @@ class CategorySeeder extends Seeder
                 'summary' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat reprehenderit consequuntur itaque modi sapiente minus, nam molestias esse necessitatibus laborum ducimus distinctio, sint vitae quos, suscipit error mollitia vero similique!',
                 'status' => 'active'
             ],
+            [
+                'title' => 'Women Fashiom',
+                'slug' => 'women-fashion',
+                'is_parent' => true,
+                'parent_id'=> null,
+                'summary' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat reprehenderit consequuntur itaque modi sapiente minus, nam molestias esse necessitatibus laborum ducimus distinctio, sint vitae quos, suscipit error mollitia vero similique!',
+                'status' => 'active'
+            ],
+            [
+                'title' => 'Men Fashiom',
+                'slug' => 'men-fashion',
+                'is_parent' => true,
+                'parent_id'=> null,
+                'summary' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat reprehenderit consequuntur itaque modi sapiente minus, nam molestias esse necessitatibus laborum ducimus distinctio, sint vitae quos, suscipit error mollitia vero similique!',
+                'status' => 'active'
+            ],
 
         ]);
         DB::table('categories')->insert([
